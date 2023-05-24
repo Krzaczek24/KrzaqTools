@@ -12,6 +12,8 @@ Class provides possibility comparing with any other `Specifiable<T>` and `Specif
 ### Changelog
 #### v1.0.0
 Library creation
+#### v1.0.1
+Fixed README
 
 ## Polski
 Klasa `Specifiable` pozwala opakować każdą inną klasę i przechowywać informację o tym czy obiekt był określony czy też nie.
@@ -25,3 +27,5 @@ Klasa dostarcza możliwość porównywania z innymi `Specifiable<T>` oraz `Speci
 ### Zmiany
 #### v1.0.0
 Utworzenie biblioteki
+#### v1.0.1
+Naprawiono README
