@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Extensions.StringNotationExtension
+namespace KrzaqTools.StringNotationExtension
 {
     public static class StringNotationExtension
     {

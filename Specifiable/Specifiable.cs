@@ -1,4 +1,4 @@
-﻿namespace Specifiable
+﻿namespace KrzaqTools
 {
     public abstract class Specifiable
     {

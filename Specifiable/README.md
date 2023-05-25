@@ -10,10 +10,12 @@ There is also available method `Unspecify`, just in case to clear `Value` using 
 Class provides possibility comparing with any other `Specifiable<T>` and `Specifiable`.
 
 ### Changelog
-#### v1.0.0
-Library creation
+#### v1.1.0
+Fixed namespace
 #### v1.0.1
 Fixed README
+#### v1.0.0
+Library creation
 
 ## Polski
 Klasa `Specifiable` pozwala opakować każdą inną klasę i przechowywać informację o tym czy obiekt był określony czy też nie.
@@ -25,7 +27,9 @@ Dostępna jest również metoda `Unspecify`, na wypadek potrzeby wyczyszczenia `
 Klasa dostarcza możliwość porównywania z innymi `Specifiable<T>` oraz `Specifiable`.
 
 ### Zmiany
-#### v1.0.0
-Utworzenie biblioteki
+#### v1.1.0
+Naprawiono przestrzeń nazw
 #### v1.0.1
 Naprawiono README
+#### v1.0.0
+Utworzenie biblioteki
