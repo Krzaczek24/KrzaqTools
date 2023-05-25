@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringNotation", "Extension
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadOnlyDictionary", "Extensions\ReadOnlyDictionary\ReadOnlyDictionary.csproj", "{D9CF06F0-7C09-4FA2-97DE-0AF0EB8AEC6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEnumerable", "IEnumerable\IEnumerable.csproj", "{A3578AE4-534D-41BE-9973-EBACEFE08704}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEnumerable", "Extensions\IEnumerable\IEnumerable.csproj", "{A3578AE4-534D-41BE-9973-EBACEFE08704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
