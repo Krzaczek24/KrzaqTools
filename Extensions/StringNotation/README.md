@@ -1,4 +1,4 @@
-﻿# StringNotation
+﻿# StringNotationExtension
 
 Extension allows to change notation from any to choosen one
 

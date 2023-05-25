@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Extensions.StringNotation
+namespace Extensions.StringNotationExtension
 {
-    public static class StringNotation
+    public static class StringNotationExtension
     {
         private const string SEPARATOR = "|";
 

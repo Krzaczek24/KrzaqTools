@@ -1,4 +1,4 @@
-﻿# ReadOnlyDictionary
+﻿# ReadOnlyDictionaryExtension
 
 Extension allows to convert `Dictionary` to `ReadOnlyDictionary` especially for `Dictionary` with different types of `Collection`-s which are converted to `IReadOnlyCollection`.
 
