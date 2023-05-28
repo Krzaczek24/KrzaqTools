@@ -1,5 +1,9 @@
 ﻿# ReflectionToolbox
 Library contains few reflection functions
+## v1.1.4
+* Methods below now allows to optionally specify assembly
+* `List<Type> GetAllNonAbstractSubclasses<TBaseClass>()`
+* `List<Type> GetAllNonAbstractImplementingInterface<TInterface>()`
 ## v1.1.3
 * Code simplification
 ## v1.1.2

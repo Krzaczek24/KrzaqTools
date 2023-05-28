@@ -7,7 +7,7 @@ namespace KrzaqTools
 {
     public static class ReflectionToolbox
     {
-        public static List<Type> GetAllNonAbstractSubclasses<TBaseClass>() => GetAllNonAbstractSubclasses(typeof(TBaseClass), Assembly.GetCallingAssembly());
+        public static List<Type> GetAllNonAbstractSubclasses<TBaseClass>(Assembly? assembly = null) => GetAllNonAbstractSubclasses(typeof(TBaseClass), assembly ?? Assembly.GetCallingAssembly());
 
         public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType) => GetAllNonAbstractSubclasses(baseClassType, Assembly.GetCallingAssembly());
 
@@ -32,7 +32,7 @@ namespace KrzaqTools
                 .ToList();
         }
 
-        public static List<Type> GetAllNonAbstractImplementingInterface<TInterface>() => GetAllNonAbstractImplementingInterface(typeof(TInterface), Assembly.GetCallingAssembly());
+        public static List<Type> GetAllNonAbstractImplementingInterface<TInterface>(Assembly? assembly = null) => GetAllNonAbstractImplementingInterface(typeof(TInterface), assembly ?? Assembly.GetCallingAssembly());
 
         public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface) => GetAllNonAbstractImplementingInterface(@interface, Assembly.GetCallingAssembly());
 
