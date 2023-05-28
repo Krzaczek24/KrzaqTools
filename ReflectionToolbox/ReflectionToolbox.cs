@@ -7,107 +7,51 @@ namespace KrzaqTools
 {
     public static class ReflectionToolbox
     {
-        public static List<Type> GetAllNonAbstractSubclasses<TBaseClass>()
-        {
-            Type baseClassType = typeof(TBaseClass);
+        public static List<Type> GetAllNonAbstractSubclasses<TBaseClass>() => GetAllNonAbstractSubclasses(typeof(TBaseClass), Assembly.GetCallingAssembly());
 
-            if (baseClassType == null)
-                throw new ArgumentNullException($"Parameter [{nameof(baseClassType)}] cannot be null");
-
-            if (baseClassType.IsInterface)
-                throw new ArgumentException($"Parameter [{nameof(baseClassType)}] cannot be interface type");
-
-            return Assembly
-                .GetCallingAssembly()
-                .GetTypes()
-                .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(baseClassType))
-                .ToList();
-        }
-
-        public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType)
-        {
-            if (baseClassType == null)
-                throw new ArgumentNullException($"Parameter [{nameof(baseClassType)}] cannot be null");
-
-            if (baseClassType.IsInterface)
-                throw new ArgumentException($"Parameter [{nameof(baseClassType)}] cannot be interface type");
-
-            return Assembly
-                .GetCallingAssembly()
-                .GetTypes()
-                .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(baseClassType))
-                .ToList();
-        }
+        public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType) => GetAllNonAbstractSubclasses(baseClassType, Assembly.GetCallingAssembly());
 
         public static List<Type> GetAllNonAbstractSubclasses<TBaseClass, TAssemblyClass>()
             where TBaseClass : class
-            where TAssemblyClass : class => GetAllNonAbstractSubclasses(typeof(TBaseClass), typeof(TAssemblyClass));
-        public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType, Type assemblyClassType)
+            where TAssemblyClass : class => GetAllNonAbstractSubclasses(typeof(TBaseClass), typeof(TAssemblyClass).Assembly);
+
+        public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType, Assembly assembly)
         {
             if (baseClassType == null)
                 throw new ArgumentNullException($"Parameter [{nameof(baseClassType)}] cannot be null");
 
-            if (assemblyClassType == null)
-                throw new ArgumentNullException($"Parameter [{nameof(assemblyClassType)}] cannot be null");
+            if (assembly == null)
+                throw new ArgumentNullException($"Parameter [{nameof(assembly)}] cannot be null");
 
             if (baseClassType.IsInterface)
                 throw new ArgumentException($"Parameter [{nameof(baseClassType)}] cannot be interface type");
 
-            return Assembly
-                .GetAssembly(assemblyClassType)!
+            return assembly
                 .GetTypes()
                 .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(baseClassType))
                 .ToList();
         }
 
-        public static List<Type> GetAllNonAbstractImplementingInterface<TInterface>()
-        {
-            Type @interface = typeof(TInterface);
+        public static List<Type> GetAllNonAbstractImplementingInterface<TInterface>() => GetAllNonAbstractImplementingInterface(typeof(TInterface), Assembly.GetCallingAssembly());
 
-            if (@interface == null)
-                throw new ArgumentNullException($"Parameter [{nameof(@interface)}] cannot be null");
-
-            if (!@interface.IsInterface)
-                throw new ArgumentException($"Parameter [{nameof(@interface)}] must be interface type");
-
-            return Assembly
-                .GetCallingAssembly()!
-                .GetTypes()
-                .Where(t => t.IsClass && !t.IsAbstract && @interface.IsAssignableFrom(t))
-                .ToList();
-        }
-
-        public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface)
-        {
-            if (@interface == null)
-                throw new ArgumentNullException($"Parameter [{nameof(@interface)}] cannot be null");
-
-            if (!@interface.IsInterface)
-                throw new ArgumentException($"Parameter [{nameof(@interface)}] must be interface type");
-
-            return Assembly
-                .GetCallingAssembly()!
-                .GetTypes()
-                .Where(t => t.IsClass && !t.IsAbstract && @interface.IsAssignableFrom(t))
-                .ToList();
-        }
+        public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface) => GetAllNonAbstractImplementingInterface(@interface, Assembly.GetCallingAssembly());
 
         public static List<Type> GetAllNonAbstractImplementingInterface<TInterface, TAssemblyClass>() 
             where TInterface : class
-            where TAssemblyClass : class => GetAllNonAbstractImplementingInterface(typeof(TInterface), typeof(TAssemblyClass));
-        public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface, Type assemblyClassType)
+            where TAssemblyClass : class => GetAllNonAbstractImplementingInterface(typeof(TInterface), typeof(TAssemblyClass).Assembly);
+
+        public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface, Assembly assembly)
         {
             if (@interface == null)
                 throw new ArgumentNullException($"Parameter [{nameof(@interface)}] cannot be null");
 
-            if (assemblyClassType == null)
-                throw new ArgumentNullException($"Parameter [{nameof(assemblyClassType)}] cannot be null");
+            if (assembly == null)
+                throw new ArgumentNullException($"Parameter [{nameof(assembly)}] cannot be null");
 
             if (!@interface.IsInterface)
                 throw new ArgumentException($"Parameter [{nameof(@interface)}] must be interface type");
 
-            return Assembly
-                .GetAssembly(assemblyClassType)!
+            return assembly
                 .GetTypes()
                 .Where(t => t.IsClass && !t.IsAbstract && @interface.IsAssignableFrom(t))
                 .ToList();

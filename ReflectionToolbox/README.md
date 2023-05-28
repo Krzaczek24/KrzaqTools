@@ -1,5 +1,7 @@
 ﻿# ReflectionToolbox
 Library contains few reflection functions
+## v1.1.3
+* Code simplification
 ## v1.1.2
 * Fixed
 	* `List<Type> GetAllNonAbstractSubclasses<TBaseClass>()`
