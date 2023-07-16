@@ -1,4 +1,4 @@
-﻿namespace KrzaqTools.NullableBooleanExtension
+﻿namespace KrzaqTools.Extensions
 {
     public static class NullableBooleanExtension
     {

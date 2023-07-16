@@ -8,7 +8,7 @@
 		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageId>EnumExtension</PackageId>
-		<Version>1.1.0</Version>
+		<Version>1.1.1</Version>
 		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>

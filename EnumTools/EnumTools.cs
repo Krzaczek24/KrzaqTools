@@ -1,9 +1,8 @@
-﻿using KrzaqTools.EnumConvert;
-using KrzaqTools.EnumExtension;
+﻿using KrzaqTools.Attributes;
+using KrzaqTools.Extensions;
 using System;
 using System.Linq;
 using System.Reflection;
-using static KrzaqTools.EnumConvert.EnumParseAttribute;
 
 namespace KrzaqTools
 {
@@ -16,19 +15,19 @@ namespace KrzaqTools
 
         public static TEnum Parse<TEnum>(string value) where TEnum : notnull, Enum
         {
-            return Parse<TEnum>(value, typeof(TEnum).GetCustomAttribute<EnumParseAttribute>()?.Mode ?? ConvertMode.Undefined);
+            return Parse<TEnum>(value, typeof(TEnum).GetCustomAttribute<EnumParseAttribute>()?.Mode ?? EnumParseAttribute.ConvertMode.Undefined);
         }
 
-        public static TEnum Parse<TEnum>(string value, ConvertMode mode) where TEnum : notnull, Enum
+        public static TEnum Parse<TEnum>(string value, EnumParseAttribute.ConvertMode mode) where TEnum : notnull, Enum
         {
             Type type = typeof(TEnum);
 
-            if (mode == ConvertMode.Value && int.TryParse(value, out int enumIntValue))
+            if (mode == EnumParseAttribute.ConvertMode.Value && int.TryParse(value, out int enumIntValue))
             {
                 return (TEnum)Enum.ToObject(type, enumIntValue);
             }
 
-            if (mode == ConvertMode.Description)
+            if (mode == EnumParseAttribute.ConvertMode.Description)
             {
                 foreach (TEnum enumValue in Enum.GetValues(type))
                 {
@@ -40,7 +39,7 @@ namespace KrzaqTools
                 }
             }
 
-            if (mode == ConvertMode.Name)
+            if (mode == EnumParseAttribute.ConvertMode.Name)
             {
                 foreach (TEnum enumValue in Enum.GetValues(type))
                 {

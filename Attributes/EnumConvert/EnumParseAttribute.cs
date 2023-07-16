@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KrzaqTools.EnumConvert
+namespace KrzaqTools.Attributes
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Enum, AllowMultiple = false)]
     public class EnumParseAttribute : Attribute

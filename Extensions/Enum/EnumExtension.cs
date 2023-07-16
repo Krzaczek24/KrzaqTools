@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace KrzaqTools.EnumExtension
+namespace KrzaqTools.Extensions
 {
     public static class EnumExtension
     {
