@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
@@ -7,14 +7,19 @@
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageId>EnumExtension</PackageId>
-		<Version>1.1.0</Version>
+		<PackageId>EnumTools</PackageId>
+		<Version>1.0.0</Version>
 		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="" />
+		<ProjectReference Include="..\Attributes\EnumConvert\EnumParse.csproj" />
+		<ProjectReference Include="..\Extensions\Enum\Enum.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
 </Project>

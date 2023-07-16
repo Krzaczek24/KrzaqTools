@@ -8,7 +8,14 @@ namespace KrzaqTools.EnumExtension
     {
         public static string? GetDescription(this Enum @enum)
         {
-            return @enum.GetType().GetField(@enum.ToString()).GetCustomAttribute<DescriptionAttribute>()?.Description;
+            return GetAttributePropertyValue(@enum, (DescriptionAttribute attr) => attr.Description);
+        }
+
+        public static TProperty GetAttributePropertyValue<TAttribute, TProperty>(this Enum @enum, Func<TAttribute, TProperty> selector)
+            where TAttribute : Attribute
+        {
+            var attribute = @enum.GetType().GetField(@enum.ToString()).GetCustomAttribute<TAttribute>();
+            return attribute == null ? default! : selector(attribute);
         }
     }
 }
