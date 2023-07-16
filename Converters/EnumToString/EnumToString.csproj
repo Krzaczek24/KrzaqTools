@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<PackageProjectUrl>https://github.com/Krzaczek24?tab=packages</PackageProjectUrl>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageId>EnumToStringConverter</PackageId>
+		<Version>1.0.1</Version>
+		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Attributes\EnumToString\EnumToString.csproj" />
+	  <ProjectReference Include="..\..\Extensions\StringNotation\StringNotation.csproj" />
+	</ItemGroup>
+
+</Project>
