@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageId>EnumToStringAttribute</PackageId>
+		<PackageId>Krzaq.Attributes.EnumToString</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>

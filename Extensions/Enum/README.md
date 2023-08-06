@@ -1,11 +1,6 @@
-﻿# EnumExtension
+﻿# Krzaq.Extensions.Enum
 Extension that helps working with enums.
-
-## v1.1.1
-* Fixed namespace
-
-## v1.1.0
-* Added `TProperty GetAttributePropertyValue<TAttribute, TProperty>(this Enum @enum, Func<TAttribute, TProperty> selector)`
 
 ## v1.0.0
 * Added `string? GetDescription(this Enum @enum)`
+* Added `TProperty GetAttributePropertyValue<TAttribute, TProperty>(this Enum @enum, Func<TAttribute, TProperty> selector)`

@@ -1,8 +1,5 @@
-﻿# NullableBooleanExtension
+﻿# Krzaq.Extensions.NullableBoolean
 Extension allows to convert `Nullable<Boolean>` (`bool?`) to `Boolean` (`bool`)
-
-## v1.0.1
-* Fixed namespace
 
 ## v1.0.0
 Supports:

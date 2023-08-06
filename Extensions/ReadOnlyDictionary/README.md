@@ -1,9 +1,6 @@
-﻿# ReadOnlyDictionaryExtension
+﻿# Krzaq.Extensions.ReadOnlyDictionary
 Extension allows to convert `Dictionary` to `ReadOnlyDictionary` especially for `Dictionary` with different types of `Collection`-s which are converted to `IReadOnlyCollection`.
 
-## v1.0.1
-* Fixed namespace
-* 
 ## v1.0.0
 Supports:
 * `IDictionary<TKey, IList<TValue>>`
