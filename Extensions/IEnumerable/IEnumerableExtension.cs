@@ -25,7 +25,7 @@ namespace KrzaqTools.Extensions
 
             var currentValue = enumerator.Current;
 
-            if (!enumerator.MoveNext())
+            if (enumerator.MoveNext())
                 return false;
 
             value = currentValue;

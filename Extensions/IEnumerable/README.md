@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.2.1
+Fixup for:
+* `bool TryGetSingle<T>(this IEnumerable<T> first, out T value)`
+
 ## v1.2.0
 Added:
 * `bool TryGetSingle<T>(this IEnumerable<T> first, out T value)`
