@@ -14,5 +14,22 @@ namespace KrzaqTools.Extensions
         {
             return new ReadOnlyDictionary<TKey, TValue>(first.ToDictionary(keySelector, valueSelector));
         }
+
+        public static bool TryGetSingle<T>(this IEnumerable<T> first, out T value)
+        {
+            value = default!;
+
+            var enumerator = first.GetEnumerator();
+            if (!enumerator.MoveNext())
+                return false;
+
+            var currentValue = enumerator.Current;
+
+            if (!enumerator.MoveNext())
+                return false;
+
+            value = currentValue;
+            return true;
+        }
     }
 }

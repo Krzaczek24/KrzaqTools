@@ -1,5 +1,9 @@
 ﻿# Krzaq.Extensions.IEnumerable
-Extension allows to convert `Dictionary` to `ReadOnlyDictionary` especially for `Dictionary` with different types of `Collection`-s which are converted to `IReadOnlyCollection`.
+Extension adds few method to `IEnumerable` collections.
+
+## v1.2.0
+Added:
+* `bool TryGetSingle<T>(this IEnumerable<T> first, out T value)`
 
 ## v1.1.0
 Added:
