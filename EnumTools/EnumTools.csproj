@@ -14,12 +14,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Attributes\EnumConvert\EnumParse.csproj" />
-		<ProjectReference Include="..\Extensions\Enum\Enum.csproj" />
+		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath=""/>
+		<PackageReference Include="Krzaq.Attributes.EnumParse" Version="1.0.0" />
+		<PackageReference Include="Krzaq.Extensions.Enum" Version="1.0.0" />
 	</ItemGroup>
 
 </Project>
