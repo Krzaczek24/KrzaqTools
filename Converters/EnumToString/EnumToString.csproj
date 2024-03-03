@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<PackageProjectUrl>https://github.com/Krzaczek24?tab=packages</PackageProjectUrl>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
@@ -18,8 +18,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Attributes\EnumToString\EnumToString.csproj" />
-	  <ProjectReference Include="..\..\Extensions\StringNotation\StringNotation.csproj" />
+	  <PackageReference Include="Krzaq.Attributes.EnumParse" Version="1.0.0" />
+	  <PackageReference Include="Krzaq.Attributes.EnumToString" Version="1.0.0" />
+	  <PackageReference Include="Krzaq.Extensions.StringNotation" Version="1.0.0" />
 	</ItemGroup>
 
 </Project>

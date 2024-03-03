@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumTools", "EnumTools\Enum
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9D352F61-64B1-448A-885D-BF1721DD2A05}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumParse", "Attributes\EnumConvert\EnumParse.csproj", "{17C0D85D-FE89-487B-B40E-8CFED1776043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumParse", "Attributes\EnumParse\EnumParse.csproj", "{17C0D85D-FE89-487B-B40E-8CFED1776043}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumToString", "Attributes\EnumToString\EnumToString.csproj", "{98BD1DA7-D332-47A0-9BBC-95972C92BCC5}"
 EndProject
