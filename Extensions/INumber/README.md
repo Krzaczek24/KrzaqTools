@@ -1,6 +1,9 @@
 ﻿# Krzaq.Extensions.INumber
 Extension adds few method to `INumber` types.
 
+## v1.0.9
+* NuGet package reference fix
+
 ## v1.0.8
 * Project name fix
 
