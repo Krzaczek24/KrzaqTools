@@ -1,4 +1,4 @@
-﻿using Common.Enums;
+﻿using KrzaqTools.Common.Enums;
 using System.Numerics;
 
 namespace KrzaqTools.Extensions

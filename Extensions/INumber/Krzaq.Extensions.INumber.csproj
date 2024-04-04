@@ -8,7 +8,7 @@
 		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageId>Krzaq.Extensions.INumber</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.0.7</Version>
 		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
@@ -18,7 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Common\Common.csproj" />
+	  <PackageReference Include="Krzaq.Common" Version="1.0.1" />
 	</ItemGroup>
 
 </Project>

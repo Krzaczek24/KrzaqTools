@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Enums
+namespace KrzaqTools.Common.Enums
 {
     [Flags]
     public enum Inclusivity
