@@ -10,6 +10,8 @@ namespace KrzaqTools.Extensions
         public static bool HasAny<T>(this IEnumerable<T> first, IEnumerable<T> second) => first.Intersect(second).Any();
         public static bool HasAll<T>(this IEnumerable<T> first, IEnumerable<T> second) => first.Intersect(second).Count() == second.Count();
 
+        public static IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first) => first.Select((item, index) => (item, index));
+
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<T, TKey, TValue>(this IEnumerable<T> first, Func<T, TKey> keySelector, Func<T, TValue> valueSelector)
         {
             return new ReadOnlyDictionary<TKey, TValue>(first.ToDictionary(keySelector, valueSelector));

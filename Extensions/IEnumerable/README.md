@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.4.0
+Added:
+* `IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first)`
+
 ## v1.3.0
 Added:
 * `IDictionary<TKey, IEnumerable<TValue>> ToDictionary<TKey, TValue>(this IEnumerable<IGrouping<TKey, TValue>> first)`
