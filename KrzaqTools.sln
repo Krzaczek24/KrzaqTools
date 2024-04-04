@@ -31,6 +31,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converters", "Converters", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumToString", "Converters\EnumToString\EnumToString.csproj", "{77E8851B-FCF1-4268-ABBD-D9685FE867ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INumber", "Extensions\INumber\INumber.csproj", "{0E1F7361-0184-45D8-A228-FA909A40307A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{EB1E7341-4712-45EA-9CD4-4BBB55804470}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,14 @@ Global
 		{77E8851B-FCF1-4268-ABBD-D9685FE867ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77E8851B-FCF1-4268-ABBD-D9685FE867ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77E8851B-FCF1-4268-ABBD-D9685FE867ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1F7361-0184-45D8-A228-FA909A40307A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1F7361-0184-45D8-A228-FA909A40307A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1F7361-0184-45D8-A228-FA909A40307A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1F7361-0184-45D8-A228-FA909A40307A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
