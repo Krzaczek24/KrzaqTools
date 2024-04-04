@@ -7,6 +7,8 @@ namespace KrzaqTools.Extensions
 {
     public static class IEnumerableExtension
     {
+        public static bool IsIn<T>(this T source, params T[] collection) => collection.Contains(source);
+
         public static bool HasAny<T>(this IEnumerable<T> first, IEnumerable<T> second) => first.Intersect(second).Any();
         public static bool HasAll<T>(this IEnumerable<T> first, IEnumerable<T> second) => !second.Except(first).Any();
 

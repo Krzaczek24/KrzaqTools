@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.6.0
+Added:
+* `bool IsIn<T>(this T source, params T[] collection)`
+
 ## v1.5.0
 Added:
 * `void ForEach<T>(this IEnumerable<T> first, Action<T> action)`
