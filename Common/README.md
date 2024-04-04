@@ -1,6 +1,9 @@
 ﻿# Krzaq.Common
 Contains common things for all `Krzaq.*` libraries
 
+## v1.0.2
+* Project name fix
+
 ## v1.0.1
 * Namespace fix
 

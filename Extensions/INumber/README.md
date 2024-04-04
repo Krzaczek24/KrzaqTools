@@ -1,6 +1,9 @@
 ﻿# Krzaq.Extensions.INumber
 Extension adds few method to `INumber` types.
 
+## v1.0.8
+* Project name fix
+
 ## v1.0.7
 Updated `Krzaq.Common` version
 

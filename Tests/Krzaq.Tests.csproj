@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Krzaq.Common" Version="1.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="NUnit" Version="3.14.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.9.0" />
@@ -18,10 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj" />
-    <ProjectReference Include="..\Extensions\Enum\Enum.csproj" />
-    <ProjectReference Include="..\Extensions\IEnumerable\IEnumerable.csproj" />
-    <ProjectReference Include="..\Extensions\INumber\INumber.csproj" />
+    <ProjectReference Include="..\Common\Krzaq.Common.csproj" />
+    <ProjectReference Include="..\Extensions\Enum\Krzaq.Extensions.Enum.csproj" />
+    <ProjectReference Include="..\Extensions\IEnumerable\Krzaq.Extensions.IEnumerable.csproj" />
+    <ProjectReference Include="..\Extensions\INumber\Krzaq.Extensions.INumber.csproj" />
   </ItemGroup>
 
   <ItemGroup>

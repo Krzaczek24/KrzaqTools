@@ -3,41 +3,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Specifiable", "Specifiable\Specifiable.csproj", "{40A22971-B16D-45F8-B337-DC8943BF7E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Specifiable", "Specifiable\Krzaq.Specifiable.csproj", "{40A22971-B16D-45F8-B337-DC8943BF7E88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReflectionToolbox", "ReflectionToolbox\ReflectionToolbox.csproj", "{3F57B707-58BE-4300-B654-4DC823396F77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.ReflectionToolbox", "ReflectionToolbox\Krzaq.ReflectionToolbox.csproj", "{3F57B707-58BE-4300-B654-4DC823396F77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{29618B3B-FEE0-49BC-9FB9-5BD69C2C9C48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringNotation", "Extensions\StringNotation\StringNotation.csproj", "{34716C50-B3C3-48A0-B785-FB37D8D19574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.StringNotation", "Extensions\StringNotation\Krzaq.Extensions.StringNotation.csproj", "{34716C50-B3C3-48A0-B785-FB37D8D19574}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadOnlyDictionary", "Extensions\ReadOnlyDictionary\ReadOnlyDictionary.csproj", "{D9CF06F0-7C09-4FA2-97DE-0AF0EB8AEC6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.ReadOnlyDictionary", "Extensions\ReadOnlyDictionary\Krzaq.Extensions.ReadOnlyDictionary.csproj", "{D9CF06F0-7C09-4FA2-97DE-0AF0EB8AEC6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEnumerable", "Extensions\IEnumerable\IEnumerable.csproj", "{A3578AE4-534D-41BE-9973-EBACEFE08704}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.IEnumerable", "Extensions\IEnumerable\Krzaq.Extensions.IEnumerable.csproj", "{A3578AE4-534D-41BE-9973-EBACEFE08704}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullableBoolean", "Extensions\NullableBoolean\NullableBoolean.csproj", "{14EDE748-7E14-46AC-8F2C-156FD418B2A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.NullableBoolean", "Extensions\NullableBoolean\Krzaq.Extensions.NullableBoolean.csproj", "{14EDE748-7E14-46AC-8F2C-156FD418B2A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enum", "Extensions\Enum\Enum.csproj", "{727E3715-124C-4180-826D-8CA06F31201A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.Enum", "Extensions\Enum\Krzaq.Extensions.Enum.csproj", "{727E3715-124C-4180-826D-8CA06F31201A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumTools", "EnumTools\EnumTools.csproj", "{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.EnumTools", "EnumTools\Krzaq.EnumTools.csproj", "{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9D352F61-64B1-448A-885D-BF1721DD2A05}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumParse", "Attributes\EnumParse\EnumParse.csproj", "{17C0D85D-FE89-487B-B40E-8CFED1776043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Attributes.EnumParse", "Attributes\EnumParse\Krzaq.Attributes.EnumParse.csproj", "{17C0D85D-FE89-487B-B40E-8CFED1776043}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumToString", "Attributes\EnumToString\EnumToString.csproj", "{98BD1DA7-D332-47A0-9BBC-95972C92BCC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Attributes.EnumToString", "Attributes\EnumToString\Krzaq.Attributes.EnumToString.csproj", "{98BD1DA7-D332-47A0-9BBC-95972C92BCC5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converters", "Converters", "{86E51B74-A272-4D9C-83AB-A3214082AB4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumToString", "Converters\EnumToString\EnumToString.csproj", "{77E8851B-FCF1-4268-ABBD-D9685FE867ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Converters.EnumToString", "Converters\EnumToString\Krzaq.Converters.EnumToString.csproj", "{77E8851B-FCF1-4268-ABBD-D9685FE867ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INumber", "Extensions\INumber\INumber.csproj", "{0E1F7361-0184-45D8-A228-FA909A40307A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.INumber", "Extensions\INumber\Krzaq.Extensions.INumber.csproj", "{0E1F7361-0184-45D8-A228-FA909A40307A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{EB1E7341-4712-45EA-9CD4-4BBB55804470}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Common", "Common\Krzaq.Common.csproj", "{5E6ED40C-B1D2-426C-ADC9-0DB30D1955F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{326892F9-2B84-412F-B87E-12754F331DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Tests", "Tests\Krzaq.Tests.csproj", "{326892F9-2B84-412F-B87E-12754F331DCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
