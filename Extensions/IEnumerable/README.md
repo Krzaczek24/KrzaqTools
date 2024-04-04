@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.4.1
+Fixed bug:
+* where `bool HasAll<T>(this IEnumerable<T> first, IEnumerable<T> second)` was returning wrong results for collections containing duplicates
+
 ## v1.4.0
 Added:
 * `IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first)`
