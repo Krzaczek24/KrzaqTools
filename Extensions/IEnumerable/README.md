@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.5.0
+Added:
+* `void ForEach<T>(this IEnumerable<T> first, Action<T> action)`
+
 ## v1.4.1
 Fixed bug:
 * where `bool HasAll<T>(this IEnumerable<T> first, IEnumerable<T> second)` was returning wrong results for collections containing duplicates
