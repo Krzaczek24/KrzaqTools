@@ -43,5 +43,21 @@ namespace Tests.Extensions
             // --- Assert ---
             Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        [TestCase(short.MinValue, -1)]
+        [TestCase(short.MaxValue, 1)]
+        [TestCase(short.MaxValue / 2, 0.5)]
+        [TestCase(0, 0)]
+        public void ScaleTest(short value, double expectedValue)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            double result = ((double)value).Scale(short.MinValue, short.MaxValue, -1, 1);
+
+            // --- Assert ---
+            Assert.That(Math.Round(result, 4), Is.EqualTo(expectedValue));
+        }
     }
 }
