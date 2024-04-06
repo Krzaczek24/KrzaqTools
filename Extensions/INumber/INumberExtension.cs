@@ -18,6 +18,11 @@ namespace KrzaqTools.Extensions
             return minTargetValue + (value - minSourceValue) / (maxSourceValue - minSourceValue) * (maxTargetValue - minTargetValue);
         }
 
+        public static TOut ScaleAndConvert<TIn, TOut>(this TIn value, TIn minSourceValue, TIn maxSourceValue, TOut minTargetValue, TOut maxTargetValue) where TIn : INumber<TIn> where TOut : INumber<TOut>
+        {
+            return TOut.CreateTruncating((value - minSourceValue) / (maxSourceValue - minSourceValue)) * (maxTargetValue - minTargetValue) + minTargetValue;
+        }
+
         public static T CutOff<T>(this T value, T min, T max) where T : INumber<T>
         {
             if (value < min) return min;
