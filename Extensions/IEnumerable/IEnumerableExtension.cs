@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace KrzaqTools.Extensions
         {
             foreach (var item in first) action(item);            
         }
+
+        public static bool IsNullOrEmpty(this IEnumerable first) => first == null || !first.GetEnumerator().MoveNext();
 
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> first) => first == null || !first.Any();
 

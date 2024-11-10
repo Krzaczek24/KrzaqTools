@@ -1,4 +1,5 @@
 ﻿using KrzaqTools.Extensions;
+using System.Collections;
 
 #pragma warning disable CA1861
 namespace Tests.Extensions
@@ -56,6 +57,21 @@ namespace Tests.Extensions
             // --- Assert ---
             Assert.That(actualResult, Is.EqualTo(expectedResult));
             Assert.That(actualValue, Is.EqualTo(expectedValue));
+        }
+
+        [Test]
+        [TestCase(false, new string[] { "any" })]
+        [TestCase(true, new string[] { })]
+        [TestCase(true)]
+        public void IsNullOrEmptyIEnumerableTest(bool expectedResult, IEnumerable? first = null)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            bool actualResult = first!.IsNullOrEmpty();
+
+            // --- Assert ---
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
 
         [Test]

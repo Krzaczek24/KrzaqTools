@@ -8,7 +8,7 @@
 		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageId>Krzaq.Extensions.IEnumerable</PackageId>
-		<Version>1.7.0</Version>
+		<Version>1.8.0</Version>
 		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
