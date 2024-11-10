@@ -57,5 +57,35 @@ namespace Tests.Extensions
             Assert.That(actualResult, Is.EqualTo(expectedResult));
             Assert.That(actualValue, Is.EqualTo(expectedValue));
         }
+
+        [Test]
+        [TestCase(false, new string[] { "any" })]
+        [TestCase(true, new string[] { })]
+        [TestCase(true)]
+        public void IsNullOrEmptyEnumerableTest(bool expectedResult, IEnumerable<object>? first = null)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            bool actualResult = first!.IsNullOrEmpty();
+
+            // --- Assert ---
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(false, new string[] { "any" })]
+        [TestCase(true, new string[] { })]
+        [TestCase(true)]
+        public void IsNullOrEmptyCollectionTest(bool expectedResult, ICollection<object>? first = null)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            bool actualResult = first!.IsNullOrEmpty();
+
+            // --- Assert ---
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
+        }
     }
 }

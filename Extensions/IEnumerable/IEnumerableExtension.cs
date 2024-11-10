@@ -17,6 +17,10 @@ namespace KrzaqTools.Extensions
             foreach (var item in first) action(item);            
         }
 
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> first) => first == null || !first.Any();
+
+        public static bool IsNullOrEmpty<T>(this ICollection<T> first) => !(first?.Count > 0);
+
         public static IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first) => first.Select((item, index) => (item, index));
 
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<T, TKey, TValue>(this IEnumerable<T> first, Func<T, TKey> keySelector, Func<T, TValue> valueSelector)
