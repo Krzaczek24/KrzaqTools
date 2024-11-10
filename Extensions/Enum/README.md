@@ -1,6 +1,9 @@
 ﻿# Krzaq.Extensions.Enum
 Extension that helps working with enums.
 
+## v1.2.0
+* Added `TEnum[] GetParticularFlags<TEnum>(this TEnum @enum)`
+
 ## v1.1.1
 * Added `TAttribute? GetAttribute<TAttribute>(this Enum @enum)`
 * Added `IEnumerable<TAttribute> GetAttributes<TAttribute>(this Enum @enum)`

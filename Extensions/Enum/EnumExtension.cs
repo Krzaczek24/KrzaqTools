@@ -26,6 +26,11 @@ namespace KrzaqTools.Extensions
             return descripton;
         }
 
+        public static TEnum[] GetParticularFlags<TEnum>(this TEnum @enum) where TEnum : struct, Enum
+        {
+            return Enum.GetValues(typeof(TEnum)).Cast<TEnum>().Where(v => @enum.HasFlag(v)).ToArray();
+        }
+
         public static bool TryGetAttributePropertyValue<TAttribute, TProperty>(this Enum @enum, Func<TAttribute, TProperty> selector, out TProperty property)
             where TAttribute : Attribute
         {

@@ -3,6 +3,7 @@ using KrzaqTools.Extensions;
 
 namespace Tests.Extensions
 {
+    [Flags]
     internal enum MyEnum
     {
         [Description("1")]
@@ -51,6 +52,21 @@ namespace Tests.Extensions
             // --- Assert ---
             Assert.That(actualResult, Is.EqualTo(expectedResult));
             Assert.That(actualValue, Is.EqualTo(expectedValue));
+        }
+
+        [Test]
+        [TestCase(MyEnum.First, new MyEnum[] { MyEnum.First })]
+        [TestCase(MyEnum.First | MyEnum.Third, new MyEnum[] { MyEnum.First, MyEnum.Third })]
+        [TestCase(MyEnum.First | MyEnum.Second | MyEnum.Second, new MyEnum[] { MyEnum.First, MyEnum.Second })]
+        public void GetParticularFlagsTest(MyEnum @enum, MyEnum[] expectedResult)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            MyEnum[] actualResult = @enum.GetParticularFlags();
+
+            // --- Assert ---
+            CollectionAssert.AreEquivalent(expectedResult, actualResult);
         }
     }
 }
