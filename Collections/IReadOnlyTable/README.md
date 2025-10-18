@@ -1,6 +1,10 @@
 ﻿# Krzaq.Collections.IReadOnlyTable
 Read only interface for tables.
 
+## v1.0.3
+Fixed:
+* Dimension names
+
 ## v1.0.2
 Fixed:
 * Namespace typo

@@ -18,10 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Collections\ReadOnlyTable\Krzaq.Collections.ReadOnlyTable.csproj" />
     <ProjectReference Include="..\Common\Krzaq.Common.csproj" />
     <ProjectReference Include="..\Extensions\Enum\Krzaq.Extensions.Enum.csproj" />
     <ProjectReference Include="..\Extensions\IEnumerable\Krzaq.Extensions.IEnumerable.csproj" />
     <ProjectReference Include="..\Extensions\INumber\Krzaq.Extensions.INumber.csproj" />
+    <ProjectReference Include="..\Extensions\IReadOnlyTable\Krzaq.Extensions.IReadOnlyTable.csproj" />
   </ItemGroup>
 
   <ItemGroup>

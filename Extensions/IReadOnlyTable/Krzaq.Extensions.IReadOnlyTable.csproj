@@ -7,8 +7,8 @@
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageId>Krzaq.Collections.ReadOnlyTable</PackageId>
-        <Version>1.0.1</Version>
+        <PackageId>Krzaq.Extensions.IReadOnlyTable</PackageId>
+        <Version>1.0.0</Version>
         <Authors>Tomasz 'Krzaczek' Drewek</Authors>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
@@ -19,7 +19,6 @@
 
     <ItemGroup>
         <PackageReference Include="Krzaq.Collections.IReadOnlyTable" Version="1.0.3" />
-        <PackageReference Include="Krzaq.Extensions.IEnumerable" Version="1.9.0" />
     </ItemGroup>
 
 </Project>
