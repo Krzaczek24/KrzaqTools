@@ -15,7 +15,7 @@ namespace KrzaqTools.Extensions
 
         public static void ForEach<T>(this IEnumerable<T> first, Action<T> action)
         {
-            foreach (var item in first) action(item);            
+            foreach (var item in first) action(item);
         }
 
         public static bool IsNullOrEmpty(this IEnumerable first) => first == null || !first.GetEnumerator().MoveNext();
@@ -25,6 +25,12 @@ namespace KrzaqTools.Extensions
         public static bool IsNullOrEmpty<T>(this ICollection<T> first) => !(first?.Count > 0);
 
         public static IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first) => first.Select((item, index) => (item, index));
+
+        public static IEnumerable<T> AsEnumerable<T>(this T[,] first)
+        {
+            foreach (T item in first)
+                yield return item;
+        }
 
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<T, TKey, TValue>(this IEnumerable<T> first, Func<T, TKey> keySelector, Func<T, TValue> valueSelector)
         {

@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.9.0
+Added:
+* `IEnumerable<T> AsEnumerable<T>(this T[,] first)`
+
 ## v1.8.0
 Added:
 * `bool IsNullOrEmpty(this IEnumerable first)`
