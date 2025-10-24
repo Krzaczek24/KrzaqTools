@@ -19,12 +19,11 @@ namespace KrzaqTools.Extensions
         }
 
         public static bool IsNullOrEmpty(this IEnumerable first) => first == null || !first.GetEnumerator().MoveNext();
-
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> first) => first == null || !first.Any();
-
         public static bool IsNullOrEmpty<T>(this ICollection<T> first) => !(first?.Count > 0);
 
         public static IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first) => first.Select((item, index) => (item, index));
+        public static IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first, int startFrom) => first.Select((item, index) => (item, index + startFrom));
 
         public static IEnumerable<T> AsEnumerable<T>(this T[,] first)
         {

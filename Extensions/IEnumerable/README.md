@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.10.0
+Added:
+* `IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first, int startFrom)`
+
 ## v1.9.0
 Added:
 * `IEnumerable<T> AsEnumerable<T>(this T[,] first)`
