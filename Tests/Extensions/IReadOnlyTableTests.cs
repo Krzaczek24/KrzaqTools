@@ -1,7 +1,7 @@
 ﻿using KrzaqTools.Collections;
 using KrzaqTools.Extensions;
 
-namespace Tests.Extensions
+namespace Krzaq.Tests.Extensions
 {
     internal class IReadOnlyTableTests
     {

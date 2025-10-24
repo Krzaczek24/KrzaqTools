@@ -2,7 +2,7 @@
 using System.Collections;
 
 #pragma warning disable CA1861
-namespace Tests.Extensions
+namespace Krzaq.Tests.Extensions
 {
     internal class IEnumerableTests
     {

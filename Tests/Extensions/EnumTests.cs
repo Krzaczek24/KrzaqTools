@@ -1,7 +1,7 @@
 ﻿using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 using KrzaqTools.Extensions;
 
-namespace Tests.Extensions
+namespace Krzaq.Tests.Extensions
 {
     [Flags]
     internal enum MyEnum

@@ -2,7 +2,7 @@
 using KrzaqTools.Extensions;
 using System.Numerics;
 
-namespace Tests.Extensions
+namespace Krzaq.Tests.Extensions
 {
     internal class INumberTests
     {
