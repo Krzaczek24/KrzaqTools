@@ -1,6 +1,13 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.11.0
+Added:
+* `string Join<T>(this IEnumerable<T> first, char separator)`
+* `string Join<T>(this IEnumerable<T> first, string separator = "")`
+* `string Join<T>(this IEnumerable<T> first, Func<T, string> selector, char separator)`
+* `string Join<T>(this IEnumerable<T> first, Func<T, string> selector, string separator = "")`
+
 ## v1.10.0
 Added:
 * `IEnumerable<(T Item, int Index)> WithIndex<T>(this IEnumerable<T> first, int startFrom)`

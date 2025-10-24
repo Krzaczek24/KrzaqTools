@@ -6,6 +6,65 @@ namespace Krzaq.Tests.Extensions
 {
     internal class IEnumerableTests
     {
+
+        [Test]
+        [TestCase(new object[] { "a", "b", "c" }, ',', "a,b,c")]
+        [TestCase(new object[] { "one", "two" }, ';', "one;two")]
+        [TestCase(new object[] { 1, "two" }, '/', "1/two")]
+        public void Join_WithCharSeparator(object[] items, char separator, string expected)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            string actual = items.Join(separator);
+
+            // --- Assert ---
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        [TestCase(new object[] { "a", "b", "c" }, "", "abc")]
+        [TestCase(new object[] { 'x', 'y' }, "-", "x-y")]
+        [TestCase(new object[] { 4, '2' }, "-", "4-2")]
+        public void Join_WithStringSeparator(object[] items, string separator, string expected)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            string actual = items.Join(separator);
+
+            // --- Assert ---
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        [TestCase(new object[] { 1, 2, 3 }, ';', "0;1;1")]
+        [TestCase(new object[] { 5, 6 }, ',', "2,3")]
+        public void Join_WithSelectorAndCharSeparator(object[] items, char separator, string expected)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            string actual = items.Join(i => (int)i / 2, separator);
+
+            // --- Assert ---
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        [TestCase(new object[] { 10, 20 }, "", "510")]
+        [TestCase(new object[] { 2, 3 }, ",", "1,1")]
+        public void Join_WithSelectorAndStringSeparator(object[] items, string separator, string expected)
+        {
+            // --- Arrange ---
+
+            // --- Act ---
+            string actual = items.Join(i => ((int)i / 2), separator);
+
+            // --- Assert ---
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
         [Test]
         [TestCase(new string[] { "a" }, new string[] { "b" }, false)]
         [TestCase(new string[] { "x" }, new string[] { "x" }, true)]

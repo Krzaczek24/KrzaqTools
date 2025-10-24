@@ -8,6 +8,11 @@ namespace KrzaqTools.Extensions
 {
     public static class IEnumerableExtension
     {
+        public static string Join<T>(this IEnumerable<T> first, char separator) => string.Join(separator, first);
+        public static string Join<T>(this IEnumerable<T> first, string separator = "") => string.Join(separator, first);
+        public static string Join<T>(this IEnumerable<T> first, Func<T, object> selector, char separator) => string.Join(separator, first.Select(selector));
+        public static string Join<T>(this IEnumerable<T> first, Func<T, object> selector, string separator = "") => string.Join(separator, first.Select(selector));
+
         public static bool IsIn<T>(this T source, params T[] collection) => collection.Contains(source);
 
         public static bool HasAny<T>(this IEnumerable<T> first, IEnumerable<T> second) => first.Intersect(second).Any();
