@@ -1,5 +1,6 @@
-﻿using KrzaqTools.Collections;
-using KrzaqTools.Extensions;
+﻿using Krzaq.Collections.IReadOnlyTable;
+using Krzaq.Collections.ReadOnlyTable;
+using Krzaq.Extensions.IReadOnlyTable;
 
 namespace Krzaq.Tests.Extensions
 {

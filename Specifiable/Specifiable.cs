@@ -1,4 +1,4 @@
-﻿namespace KrzaqTools
+﻿namespace Krzaq.Specifiable
 {
     public abstract class Specifiable
     {
@@ -11,12 +11,8 @@
 
         public override bool Equals(object? obj)
         {
-            if (obj is Specifiable)
-            {
-                var other = (Specifiable)obj;
+            if (obj is Specifiable other)
                 return IsSpecified == other.IsSpecified;
-            }
-
             return IsSpecified && obj == null;
         }
 
@@ -57,11 +53,8 @@
             if (!base.Equals(obj))
                 return false;
 
-            if (obj is Specifiable<T>)
-            {
-                var otherSpecifiable = (Specifiable<T>)obj;
+            if (obj is Specifiable<T> otherSpecifiable)
                 return Value!.Equals(otherSpecifiable.Value);
-            }
 
             return false;
         }

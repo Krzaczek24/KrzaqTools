@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.11.1
+Fixed:
+* Namespaces
+
 ## v1.11.0
 Added:
 * `string Join<T>(this IEnumerable<T> first, char separator)`

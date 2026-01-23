@@ -8,7 +8,7 @@
         <RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageId>Krzaq.Converters.EnumToString</PackageId>
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
         <Authors>Tomasz 'Krzaczek' Drewek</Authors>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
@@ -18,9 +18,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Krzaq.Attributes.EnumParse" Version="1.0.0" />
-        <PackageReference Include="Krzaq.Attributes.EnumToString" Version="1.0.0" />
-        <PackageReference Include="Krzaq.Extensions.StringNotation" Version="1.0.0" />
+        <PackageReference Include="Krzaq.Attributes.EnumParse" Version="1.0.1" />
+        <PackageReference Include="Krzaq.Attributes.EnumToString" Version="1.0.1" />
+        <PackageReference Include="Krzaq.Extensions.StringNotation" Version="1.0.1" />
         <PackageReference Include="System.Text.Json" Version="10.0.2" />
     </ItemGroup>
 

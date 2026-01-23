@@ -1,6 +1,15 @@
 ﻿# Krzaq.Extensions.Enum
 Extension that helps working with enums.
 
+## v1.3.0
+* Added `TEnum GetRandom<TEnum>()`
+* Added `TEnum Parse<TEnum>(string value)`
+* Added `TEnum Parse<TEnum>(string value, EnumParseAttribute.ConvertMode mode)`
+
+## v1.2.1
+Fixed:
+* Namespaces
+
 ## v1.2.0
 * Added `TEnum[] GetParticularFlags<TEnum>(this TEnum @enum)`
 

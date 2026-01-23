@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KrzaqTools.Errors
+namespace Krzaq.Errors.Model
 {
     public abstract class ErrorResponseModel<TErrorCode> where TErrorCode : struct, Enum
     {

@@ -1,11 +1,11 @@
-﻿using KrzaqTools.Attributes;
-using KrzaqTools.Extensions;
+﻿using Krzaq.Attributes.EnumToString;
+using Krzaq.Extensions.StringNotation;
 using System;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace KrzaqTools.Converters
+namespace Krzaq.Converters.EnumToString
 {
     public class EnumToStringConverter<T> : JsonConverter<T>
         where T : struct, Enum

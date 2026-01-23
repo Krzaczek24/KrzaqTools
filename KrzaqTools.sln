@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.NullableBo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.Enum", "Extensions\Enum\Krzaq.Extensions.Enum.csproj", "{727E3715-124C-4180-826D-8CA06F31201A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.EnumTools", "EnumTools\Krzaq.EnumTools.csproj", "{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attributes", "Attributes", "{9D352F61-64B1-448A-885D-BF1721DD2A05}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Attributes.EnumParse", "Attributes\EnumParse\Krzaq.Attributes.EnumParse.csproj", "{17C0D85D-FE89-487B-B40E-8CFED1776043}"
@@ -91,10 +89,6 @@ Global
 		{727E3715-124C-4180-826D-8CA06F31201A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{727E3715-124C-4180-826D-8CA06F31201A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{727E3715-124C-4180-826D-8CA06F31201A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA1EF8DC-CBFF-43D6-96BD-3313CC60AD05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17C0D85D-FE89-487B-B40E-8CFED1776043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17C0D85D-FE89-487B-B40E-8CFED1776043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C0D85D-FE89-487B-B40E-8CFED1776043}.Release|Any CPU.ActiveCfg = Release|Any CPU

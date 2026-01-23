@@ -1,9 +1,10 @@
-﻿using KrzaqTools.Errors;
+﻿using Krzaq.Errors.Model;
+using Krzaq.Exceptions.Http.Error.Base;
 using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace KrzaqTools.Exceptions.Http.Error
+namespace Krzaq.Exceptions.Http.Error
 {
     public class ConflictException<T> : HttpErrorException<T> where T : IError
     {

@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.StringNotation
 Extension allows to change notation from any to choosen one
 
+## v1.0.1
+Fixed:
+* Namespaces
+
 ## v1.0.0
 * `string ToCamelCase(this string input)`
 * `string ToFlatCase(this string input)`

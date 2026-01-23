@@ -1,24 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<PackageProjectUrl>https://github.com/Krzaczek24?tab=packages</PackageProjectUrl>
-		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-		<RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageId>Krzaq.Extensions.INumber</PackageId>
-		<Version>1.1.1</Version>
-		<Authors>Tomasz 'Krzaczek' Drewek</Authors>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <PackageProjectUrl>https://github.com/Krzaczek24?tab=packages</PackageProjectUrl>
+        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+        <RepositoryUrl>https://github.com/Krzaczek24/KrzaqTools</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageId>Krzaq.Extensions.INumber</PackageId>
+        <Version>1.1.2</Version>
+        <Authors>Tomasz 'Krzaczek' Drewek</Authors>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="" />
-	</ItemGroup>
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="Krzaq.Common" Version="1.0.2" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Krzaq.Common" Version="1.0.3" />
+    </ItemGroup>
 
 </Project>

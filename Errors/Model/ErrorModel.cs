@@ -1,7 +1,7 @@
 ﻿using KrzaqTools.Extensions;
 using System;
 
-namespace KrzaqTools.Errors
+namespace Krzaq.Errors.Model
 {
     public interface IError
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace KrzaqTools.Exceptions.Http
+namespace Krzaq.Exceptions.Http.Base
 {
     public abstract class HttpException : Exception
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace KrzaqTools.Extensions
+namespace Krzaq.Extensions.ReadOnlyDictionary
 {
     public static class ReadOnlyDictionaryExtension
     {

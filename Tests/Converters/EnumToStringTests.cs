@@ -1,5 +1,5 @@
-﻿using KrzaqTools.Attributes;
-using KrzaqTools.Converters;
+﻿using Krzaq.Attributes.EnumToString;
+using Krzaq.Converters.EnumToString;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 

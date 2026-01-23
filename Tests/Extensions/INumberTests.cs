@@ -1,5 +1,5 @@
-﻿using KrzaqTools.Common.Enums;
-using KrzaqTools.Extensions;
+﻿using Krzaq.Common.Enums;
+using Krzaq.Extensions.INumber;
 using System.Numerics;
 
 namespace Krzaq.Tests.Extensions

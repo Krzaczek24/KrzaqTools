@@ -1,9 +1,10 @@
-﻿using KrzaqTools.Errors;
+﻿using Krzaq.Errors.Model;
+using Krzaq.Exceptions.Http.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KrzaqTools.Exceptions.Http.Error
+namespace Krzaq.Exceptions.Http.Error.Base
 {
     public abstract class HttpErrorException<T> : HttpException where T : IError
     {

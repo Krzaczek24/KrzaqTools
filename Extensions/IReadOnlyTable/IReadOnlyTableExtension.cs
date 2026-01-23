@@ -1,7 +1,7 @@
-﻿using KrzaqTools.Collections;
+﻿using Krzaq.Collections.IReadOnlyTable;
 using System.Collections.Generic;
 
-namespace KrzaqTools.Extensions
+namespace Krzaq.Extensions.IReadOnlyTable
 {
     public static class IReadOnlyTableExtension
     {

@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IReadOnlyTable
 Extension that adds few method to `IReadOnlyTable` interface.
 
+## v1.0.1
+Fixed:
+* Namespaces
+
 ## v1.0.0
 Supports:
 * `IEnumerable<T> GetColumn<T>(this IReadOnlyTable<T> table, int index)`

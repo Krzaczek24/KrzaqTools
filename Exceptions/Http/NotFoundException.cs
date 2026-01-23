@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Krzaq.Exceptions.Http.Base;
+using System;
 using System.Net;
 
-namespace KrzaqTools.Exceptions.Http
+namespace Krzaq.Exceptions.Http
 {
     public class NotFoundException : HttpException
     {

@@ -1,5 +1,5 @@
 ﻿using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
-using KrzaqTools.Extensions;
+using Krzaq.Extensions.Enum;
 
 namespace Krzaq.Tests.Extensions
 {

@@ -1,4 +1,4 @@
-﻿using KrzaqTools.Extensions;
+﻿using Krzaq.Extensions.IEnumerable;
 using System.Collections;
 
 #pragma warning disable CA1861

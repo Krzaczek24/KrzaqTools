@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace KrzaqTools.Collections
+namespace Krzaq.Collections.IReadOnlyTable
 {
     public interface IReadOnlyTable<T> : IReadOnlyCollection<T>
     {

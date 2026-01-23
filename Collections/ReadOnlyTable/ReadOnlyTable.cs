@@ -1,7 +1,8 @@
-﻿using KrzaqTools.Extensions;
+﻿using Krzaq.Collections.IReadOnlyTable;
+using Krzaq.Extensions.IEnumerable;
 using System.Collections.Generic;
 
-namespace KrzaqTools.Collections
+namespace Krzaq.Collections.ReadOnlyTable
 {
     public class ReadOnlyTable<T> : IReadOnlyTable<T>
     {

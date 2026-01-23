@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.INumber
 Extension adds few method to `INumber` types.
 
+## v1.1.2
+Fixed:
+* Namespaces
+
 ## v1.1.1
 Added:
 * `TOut ScaleAndConvert<TIn, TOut>(this TIn value, TIn minSourceValue, TIn maxSourceValue, TOut minTargetValue, TOut maxTargetValue)`

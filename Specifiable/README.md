@@ -7,5 +7,9 @@ Setting any value, even `null`, sets property `IsSpecified` to `true`.
 There is also available method `Unspecify`, just in case to clear `Value` using `default` value and setting `IsSpecified` again to `false`.
 Class provides possibility comparing with any other `Specifiable<T>` and `Specifiable`.
 
+## v1.0.1
+Fixed:
+* Namespaces
+
 ## v1.0.0
 * Library creation

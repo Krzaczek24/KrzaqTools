@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KrzaqTools.Attributes
+namespace Krzaq.Attributes.EnumToString
 {
     public enum NameAlterMode
     {

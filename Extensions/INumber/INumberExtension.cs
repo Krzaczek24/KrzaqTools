@@ -1,7 +1,7 @@
-﻿using KrzaqTools.Common.Enums;
+﻿using Krzaq.Common.Enums;
 using System.Numerics;
 
-namespace KrzaqTools.Extensions
+namespace Krzaq.Extensions.INumber
 {
     public static class INumberExtension
     {

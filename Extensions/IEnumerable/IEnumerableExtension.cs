@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using Krzaq.Extensions.IEnumerable;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace KrzaqTools.Extensions
+namespace Krzaq.Extensions.IEnumerable
 {
     public static class IEnumerableExtension
     {
@@ -23,7 +23,7 @@ namespace KrzaqTools.Extensions
             foreach (var item in first) action(item);
         }
 
-        public static bool IsNullOrEmpty(this IEnumerable first) => first == null || !first.GetEnumerator().MoveNext();
+        public static bool IsNullOrEmpty(this System.Collections.IEnumerable first) => first == null || !first.GetEnumerator().MoveNext();
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> first) => first == null || !first.Any();
         public static bool IsNullOrEmpty<T>(this ICollection<T> first) => !(first?.Count > 0);
 
