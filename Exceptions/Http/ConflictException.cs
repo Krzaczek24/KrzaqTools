@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public class ConflictException : HttpException
     {
-        internal override HttpStatusCode StatusCode => HttpStatusCode.Conflict;
+        public override HttpStatusCode StatusCode => HttpStatusCode.Conflict;
 
         public ConflictException() { }
 

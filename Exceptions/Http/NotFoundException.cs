@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public class NotFoundException : HttpException
     {
-        internal override HttpStatusCode StatusCode => HttpStatusCode.NotFound;
+        public override HttpStatusCode StatusCode => HttpStatusCode.NotFound;
 
         public NotFoundException() { }
 

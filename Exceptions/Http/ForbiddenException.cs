@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public class ForbiddenException : HttpException
     {
-        internal override HttpStatusCode StatusCode => HttpStatusCode.Forbidden;
+        public override HttpStatusCode StatusCode => HttpStatusCode.Forbidden;
 
         public ForbiddenException() { }
 

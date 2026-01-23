@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public abstract class HttpException : Exception
     {
-        internal abstract HttpStatusCode StatusCode { get; }
+        public abstract HttpStatusCode StatusCode { get; }
 
         public HttpException() { }
 

@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public class InternalServerException : HttpException
     {
-        internal override HttpStatusCode StatusCode => HttpStatusCode.InternalServerError;
+        public override HttpStatusCode StatusCode => HttpStatusCode.InternalServerError;
 
         public InternalServerException() { }
 

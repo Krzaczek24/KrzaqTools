@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public class BadRequestException : HttpException
     {
-        internal override HttpStatusCode StatusCode => HttpStatusCode.BadRequest;
+        public override HttpStatusCode StatusCode => HttpStatusCode.BadRequest;
 
         public BadRequestException() { }
 

@@ -5,7 +5,7 @@ namespace KrzaqTools.Exceptions.Http
 {
     public class UnauthorizedException : HttpException
     {
-        internal override HttpStatusCode StatusCode => HttpStatusCode.Unauthorized;
+        public override HttpStatusCode StatusCode => HttpStatusCode.Unauthorized;
 
         public UnauthorizedException() { }
 
