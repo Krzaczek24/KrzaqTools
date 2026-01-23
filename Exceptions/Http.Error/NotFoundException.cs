@@ -1,0 +1,21 @@
+﻿using KrzaqTools.Errors;
+using System;
+using System.Collections.Generic;
+using System.Net;
+
+namespace KrzaqTools.Exceptions.Http.Error
+{
+    public class NotFoundException<T> : HttpErrorException<T> where T : IError
+    {
+        public override HttpStatusCode StatusCode => HttpStatusCode.NotFound;
+
+        public NotFoundException(Exception? innerException = null)
+            : base(innerException) { }
+
+        public NotFoundException(T error, Exception? innerException = null)
+            : base(error, innerException) { }
+
+        public NotFoundException(IEnumerable<T> errors, Exception? innerException = null, string message = "")
+            : base(errors, innerException, message) { }
+    }
+}

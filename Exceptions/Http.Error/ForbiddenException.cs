@@ -1,0 +1,21 @@
+﻿using KrzaqTools.Errors;
+using System;
+using System.Collections.Generic;
+using System.Net;
+
+namespace KrzaqTools.Exceptions.Http.Error
+{
+    public class ForbiddenException<T> : HttpErrorException<T> where T : IError
+    {
+        public override HttpStatusCode StatusCode => HttpStatusCode.Forbidden;
+
+        public ForbiddenException(Exception? innerException = null)
+            : base(innerException) { }
+
+        public ForbiddenException(T error, Exception? innerException = null)
+            : base(error, innerException) { }
+
+        public ForbiddenException(IEnumerable<T> errors, Exception? innerException = null, string message = "")
+            : base(errors, innerException, message) { }
+    }
+}
