@@ -1,51 +1,37 @@
 ﻿using KrzaqTools.Attributes;
 using KrzaqTools.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace KrzaqTools.Converters
 {
-    public class EnumToStringConverterFactory : JsonConverterFactory
+    public class EnumToStringConverter<T> : JsonConverter<T>
+        where T : struct, Enum
     {
-        public override bool CanConvert(Type typeToConvert)
+        public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return typeToConvert.IsEnum;
+            return Enum.TryParse(typeToConvert, reader.GetString()?.ToCamelCase(), true, out object? result) ? (T)result! : default!;
         }
 
-        public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
-        {
-            return new EnumToStringConverter();
-        }
-    }
-
-    public class EnumToStringConverter : JsonConverter<Enum>
-    {
-        private static readonly IReadOnlyDictionary<NameAlterMode, Func<string, string>> converters = new Dictionary<NameAlterMode, Func<string, string>>()
-        {
-            [NameAlterMode.None] = (name) => name,
-            [NameAlterMode.ToCamel] = (name) => name.ToCamelCase(),
-            [NameAlterMode.ToFlat] = (name) => name.ToFlatCase(),
-            [NameAlterMode.ToKebab] = (name) => name.ToKebabCase(),
-            [NameAlterMode.ToLower] = (name) => name.ToLower(),
-            [NameAlterMode.ToSnake] = (name) => name.ToSnakeCase(),
-            [NameAlterMode.ToUpper] = (name) => name.ToUpper(),
-            [NameAlterMode.ToUpperFlat] = (name) => name.ToFlatCase().ToUpper(),
-            [NameAlterMode.ToUpperKebab] = (name) => name.ToKebabCase().ToUpper(),
-            [NameAlterMode.ToUpperSnake] = (name) => name.ToSnakeCase().ToUpper(),
-        };
-
-        public override Enum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            return Enum.TryParse(typeToConvert, reader.GetString(), true, out object? result) ? (Enum)result! : default!;
-        }
-
-        public override void Write(Utf8JsonWriter writer, Enum value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
         {
             var convertMode = value.GetType().GetCustomAttribute<EnumToStringAttribute>()?.Mode ?? NameAlterMode.None;
-            writer.WriteStringValue(converters[convertMode](value.ToString()));
+            string enumString = value.ToString();
+            writer.WriteStringValue(convertMode switch
+            {
+                NameAlterMode.ToCamel => enumString.ToCamelCase(),
+                NameAlterMode.ToFlat => enumString.ToFlatCase(),
+                NameAlterMode.ToKebab => enumString.ToKebabCase(),
+                NameAlterMode.ToLower => enumString.ToLower(),
+                NameAlterMode.ToSnake => enumString.ToSnakeCase(),
+                NameAlterMode.ToUpper => enumString.ToUpper(),
+                NameAlterMode.ToUpperFlat => enumString.ToFlatCase().ToUpper(),
+                NameAlterMode.ToUpperKebab => enumString.ToKebabCase().ToUpper(),
+                NameAlterMode.ToUpperSnake => enumString.ToSnakeCase().ToUpper(),
+                _ => enumString,
+            });
         }
     }
 }
