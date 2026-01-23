@@ -1,6 +1,10 @@
 ﻿# Krzaq.Converters.EnumToString
 Converter serializing enum by name and using `EnumToStringAttribute`.
 
+## v1.1.1
+Fixed:
+* Wrong library target framework
+
 ## v1.1.0
 Fixed:
 * Changes to converter class
