@@ -1,11 +1,8 @@
-﻿# Krzaq.ReflectionToolbox
+﻿# Krzaq.Tools.Reflection
 Library contains few reflection functions
 
-## v1.0.1
-Fixed:
-* Namespaces
-
 ## v1.0.0
+Added:
 * `List<Type> GetAllNonAbstractSubclasses(Type baseClassType)`
 * `List<Type> GetAllNonAbstractSubclasses<TBaseClass>()`
 * `List<Type> GetAllNonAbstractSubclasses<TBaseClass, TAssemblyClass>()`

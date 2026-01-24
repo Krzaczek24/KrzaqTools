@@ -5,7 +5,7 @@ VisualStudioVersion = 18.2.11415.280
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Specifiable", "Specifiable\Krzaq.Specifiable.csproj", "{40A22971-B16D-45F8-B337-DC8943BF7E88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.ReflectionToolbox", "ReflectionToolbox\Krzaq.ReflectionToolbox.csproj", "{3F57B707-58BE-4300-B654-4DC823396F77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Tools.Reflection", "Tools\Reflection\Krzaq.Tools.Reflection.csproj", "{3F57B707-58BE-4300-B654-4DC823396F77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{29618B3B-FEE0-49BC-9FB9-5BD69C2C9C48}"
 EndProject
@@ -54,6 +54,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krzaq.Exceptions.Http", "Exceptions\Http\Krzaq.Exceptions.Http.csproj", "{7D05FBAB-022A-4C54-A15E-E9787694BFC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krzaq.Exceptions.Http.Error", "Exceptions\Http.Error\Krzaq.Exceptions.Http.Error.csproj", "{E71FA738-6516-4653-97BB-37721555A69E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{153188EA-353B-4F52-A475-E2DC7099A203}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -142,6 +144,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{3F57B707-58BE-4300-B654-4DC823396F77} = {153188EA-353B-4F52-A475-E2DC7099A203}
 		{34716C50-B3C3-48A0-B785-FB37D8D19574} = {29618B3B-FEE0-49BC-9FB9-5BD69C2C9C48}
 		{D9CF06F0-7C09-4FA2-97DE-0AF0EB8AEC6C} = {29618B3B-FEE0-49BC-9FB9-5BD69C2C9C48}
 		{A3578AE4-534D-41BE-9973-EBACEFE08704} = {29618B3B-FEE0-49BC-9FB9-5BD69C2C9C48}
