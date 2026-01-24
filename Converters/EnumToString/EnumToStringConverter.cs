@@ -1,5 +1,5 @@
 ﻿using Krzaq.Attributes.EnumToString;
-using Krzaq.Extensions.StringNotation;
+using Krzaq.Extensions.String.Notation;
 using System;
 using System.Reflection;
 using System.Text.Json;
