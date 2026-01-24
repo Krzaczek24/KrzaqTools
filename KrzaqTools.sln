@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.ReflectionToolbox", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{29618B3B-FEE0-49BC-9FB9-5BD69C2C9C48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.StringNotation", "Extensions\StringNotation\Krzaq.Extensions.StringNotation.csproj", "{34716C50-B3C3-48A0-B785-FB37D8D19574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.String", "Extensions\String\Krzaq.Extensions.String.csproj", "{34716C50-B3C3-48A0-B785-FB37D8D19574}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Krzaq.Extensions.ReadOnlyDictionary", "Extensions\ReadOnlyDictionary\Krzaq.Extensions.ReadOnlyDictionary.csproj", "{D9CF06F0-7C09-4FA2-97DE-0AF0EB8AEC6C}"
 EndProject

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Krzaq.Extensions.StringNotation
+namespace Krzaq.Extensions.String.Notation
 {
     public static class StringNotationExtension
     {
@@ -15,11 +15,14 @@ namespace Krzaq.Extensions.StringNotation
             return input.ToLower();
         }
 
-        public static string[] SplitWords(this string input) => input.ParseWords().Split(SEPARATOR, StringSplitOptions.RemoveEmptyEntries);
+        private static string[] SplitWords(this string input) => input.ParseWords().Split(SEPARATOR, StringSplitOptions.RemoveEmptyEntries);
 
         public static string ToCamelCase(this string input)
         {
             string[] words = input.SplitWords();
+            if (words.Length == 0)
+                return input;
+
             string result = words[0];
 
             for (int i = 1; i < words.Length; i++)

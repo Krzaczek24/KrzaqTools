@@ -25,6 +25,7 @@
         <ProjectReference Include="..\Extensions\IEnumerable\Krzaq.Extensions.IEnumerable.csproj" />
         <ProjectReference Include="..\Extensions\INumber\Krzaq.Extensions.INumber.csproj" />
         <ProjectReference Include="..\Extensions\IReadOnlyTable\Krzaq.Extensions.IReadOnlyTable.csproj" />
+        <ProjectReference Include="..\Extensions\String\Krzaq.Extensions.String.csproj" />
     </ItemGroup>
 
     <ItemGroup>
