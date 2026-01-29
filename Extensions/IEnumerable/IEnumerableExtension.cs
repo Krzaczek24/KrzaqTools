@@ -23,6 +23,14 @@ namespace Krzaq.Extensions.IEnumerable
             foreach (var item in first) action(item);
         }
 
+        public static T? FirstOrNull<T>(this IEnumerable<T> first) where T : struct
+        {
+            var enumerator = first.GetEnumerator();
+            if (enumerator.MoveNext())
+                return enumerator.Current;
+            return null;
+        }
+
         public static bool IsNullOrEmpty(this System.Collections.IEnumerable first) => first == null || !first.GetEnumerator().MoveNext();
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> first) => first == null || !first.Any();
         public static bool IsNullOrEmpty<T>(this ICollection<T> first) => !(first?.Count > 0);
@@ -66,6 +74,18 @@ namespace Krzaq.Extensions.IEnumerable
 
             value = currentValue;
             return true;
+        }
+
+        public static void Deconstruct<T>(this IEnumerable<T> that, out T? first, out IEnumerable<T> rest) where T : struct
+        {
+            first = that.FirstOrNull();
+            rest = that.Skip(1);
+        }
+
+        public static void Deconstruct<T>(this IEnumerable<T> that, out T? first, out IEnumerable<T> rest) where T : class
+        {
+            first = that.FirstOrDefault();
+            rest = that.Skip(1);
         }
     }
 }

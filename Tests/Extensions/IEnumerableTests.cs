@@ -162,5 +162,52 @@ namespace Krzaq.Tests.Extensions
             // --- Assert ---
             Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        public void DeconstructStructsTest()
+        {
+            // --- Arrange ---
+            var array = new[] { 1, 2 };
+
+            // --- Act ---
+            var (first, (second, (third, rest))) = array;
+            var (_, rest2) = array;
+
+            // --- Assert ---
+            Assert.Multiple(() =>
+            {
+                Assert.That(first, Is.EqualTo(1));
+                Assert.That(second, Is.EqualTo(2));
+                Assert.That(third, Is.Null);
+                Assert.That(rest, Is.Empty);
+
+                Assert.That(rest2.ToList(), Has.Count.EqualTo(1));
+                Assert.That(rest2.First(), Is.EqualTo(2));
+            });
+        }
+
+        private record Foo(int Value);
+        [Test]
+        public void DeconstructClassesTest()
+        {
+            // --- Arrange ---
+            var array = new[] { new Foo(1), new Foo(2) };
+
+            // --- Act ---
+            var (first, (second, (third, rest))) = array;
+            var (_, rest2) = array;
+
+            // --- Assert ---
+            Assert.Multiple(() =>
+            {
+                Assert.That(first, Is.EqualTo(new Foo(1)));
+                Assert.That(second, Is.EqualTo(new Foo(2)));
+                Assert.That(third, Is.Null);
+                Assert.That(rest, Is.Empty);
+
+                Assert.That(rest2.ToList(), Has.Count.EqualTo(1));
+                Assert.That(rest2.First(), Is.EqualTo(new Foo(2)));
+            });
+        }
     }
 }

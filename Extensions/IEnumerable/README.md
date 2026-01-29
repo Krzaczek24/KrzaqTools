@@ -1,6 +1,11 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.12.0
+Added:
+* `T? FirstOrNull<T>(this IEnumerable<T> first)`
+* `void Deconstruct<T>(this IEnumerable<T> that, out T? first, out IEnumerable<T> rest)`
+
 ## v1.11.1
 Fixed:
 * Namespaces
