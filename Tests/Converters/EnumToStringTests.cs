@@ -20,19 +20,25 @@ namespace Krzaq.Tests.Converters
         public TestValues Value { get; set; }
     }
 
+    internal class MyResponse
+    {
+        public IReadOnlyCollection<MyModel> Items { get; set; } = [];
+    }
+
     internal class EnumToStringTests
     {
         [Test]
         public void TestEnumToString()
         {
             // --- Arrange ---
-            var myClass = new MyModel() { Value = TestValues.LowVal };
+            var myModel = new MyModel() { Value = TestValues.LowVal };
+            var myResponse = new MyResponse() { Items = [myModel] };
 
             // --- Act ---
-            string test = JsonSerializer.Serialize(myClass);
+            string test = JsonSerializer.Serialize(myResponse);
 
             // --- Assert ---
-            Assert.That(test, Is.EqualTo("{\"Value\":\"LOW_VAL\"}"));
+            Assert.That(test, Is.EqualTo("{\"Items\":[{\"Value\":\"LOW_VAL\"}]}"));
         }
     }
 }

@@ -7,7 +7,6 @@ namespace Krzaq.Errors.Model
     public abstract class ErrorResponseModel<TErrorCode> where TErrorCode : struct, Enum
     {
         public IReadOnlyCollection<ErrorModel<TErrorCode>> Errors { get; set; }
-        public ErrorModel<TErrorCode>? Error => Errors.FirstOrDefault();
 
         public ErrorResponseModel()
         {
