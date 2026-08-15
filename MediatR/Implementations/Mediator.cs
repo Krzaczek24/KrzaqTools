@@ -1,21 +1,22 @@
 ﻿using FluentValidation.Results;
-using Krzaq.Tools.MediatR.Interfaces;
+using Krzaq.MediatR.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace Krzaq.Tools.MediatR.Implementations
+namespace Krzaq.MediatR.Implementations
 {
     public interface IMediator
     {
         public ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request);
     }
 
-    public abstract class Mediator(IServiceProvider serviceProvider) : IMediator
+    public class Mediator(IServiceProvider serviceProvider) : IMediator
     {
-        private const string VALIDATOR_PREFIX = "VALIDATOR";
-        private const string HANDLER_PREFIX = "HANDLER";
+        public const string VALIDATOR_PREFIX = "VALIDATOR";
+        public const string HANDLER_PREFIX = "HANDLER";
 
         public async ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request)
         {
@@ -28,8 +29,7 @@ namespace Krzaq.Tools.MediatR.Implementations
                 var result = validator.Validate(request);
                 if (!result.IsValid)
                 {
-                    var exception = HandleInvalidValidation(result.Errors);
-                    throw exception;
+                    throw HandleInvalidValidation(result.Errors);
                 }
             }
 
@@ -38,6 +38,11 @@ namespace Krzaq.Tools.MediatR.Implementations
             return (TResponse)await handler.Handle(request);
         }
 
-        protected abstract Exception HandleInvalidValidation(List<ValidationFailure> errors);
+        protected virtual Exception HandleInvalidValidation(List<ValidationFailure> errors)
+        {
+            string stringifiedErrors = string.Join("\n", errors.Select(Convert));
+            return new InvalidOperationException($"Validation failures:\n{stringifiedErrors}");
+            static string Convert(ValidationFailure failure) => $"";
+        }
     }
 }

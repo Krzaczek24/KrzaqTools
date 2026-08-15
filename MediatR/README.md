@@ -1,4 +1,4 @@
-﻿# Krzaq.Tools.MediatR
+﻿# Krzaq.MediatR
 Library including simple implementation of MediatR
 
 ## v1.0.0

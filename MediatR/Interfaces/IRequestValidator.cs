@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace Krzaq.Tools.MediatR.Interfaces
+namespace Krzaq.MediatR.Interfaces
 {
     public interface IRequestValidator
     {

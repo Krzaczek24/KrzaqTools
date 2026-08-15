@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Krzaq.Tools.MediatR.Interfaces
+namespace Krzaq.MediatR.Interfaces
 {
     public interface IRequestHandler
     {

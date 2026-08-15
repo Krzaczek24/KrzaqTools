@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Krzaq.Tools.MediatR.Interfaces;
+using Krzaq.MediatR.Interfaces;
 
-namespace Krzaq.Tools.MediatR.Implementations
+namespace Krzaq.MediatR.Implementations
 {
     public abstract class RequestValidator<TRequest> : AbstractValidator<TRequest>, IRequestValidator<TRequest>
         where TRequest : IRequest
