@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Krzaq.Tools.Reflection
 {
     public static class ReflectionToolbox
     {
-        public static List<Type> GetAllNonAbstractSubclasses<TBaseClass>(Assembly? assembly = null) => GetAllNonAbstractSubclasses(typeof(TBaseClass), assembly ?? Assembly.GetCallingAssembly());
+        public static IReadOnlyCollection<Type> GetAllNonAbstractSubclasses<TBaseClass>(Assembly? assembly = null) => GetAllNonAbstractSubclasses(typeof(TBaseClass), assembly ?? Assembly.GetCallingAssembly());
 
-        public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType) => GetAllNonAbstractSubclasses(baseClassType, Assembly.GetCallingAssembly());
+        public static IReadOnlyCollection<Type> GetAllNonAbstractSubclasses(Type baseClassType) => GetAllNonAbstractSubclasses(baseClassType, Assembly.GetCallingAssembly());
 
-        public static List<Type> GetAllNonAbstractSubclasses<TBaseClass, TAssemblyClass>()
+        public static IReadOnlyCollection<Type> GetAllNonAbstractSubclasses<TBaseClass, TAssemblyClass>()
             where TBaseClass : class
             where TAssemblyClass : class => GetAllNonAbstractSubclasses(typeof(TBaseClass), typeof(TAssemblyClass).Assembly);
 
-        public static List<Type> GetAllNonAbstractSubclasses(Type baseClassType, Assembly assembly)
+        public static IReadOnlyCollection<Type> GetAllNonAbstractSubclasses(Type baseClassType, Assembly assembly)
         {
             if (baseClassType == null)
                 throw new ArgumentNullException($"Parameter [{nameof(baseClassType)}] cannot be null");
@@ -29,18 +30,19 @@ namespace Krzaq.Tools.Reflection
             return assembly
                 .GetTypes()
                 .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(baseClassType))
-                .ToList();
+                .ToList()
+                .AsReadOnly();
         }
 
-        public static List<Type> GetAllNonAbstractImplementingInterface<TInterface>(Assembly? assembly = null) => GetAllNonAbstractImplementingInterface(typeof(TInterface), assembly ?? Assembly.GetCallingAssembly());
+        public static IReadOnlyCollection<Type> GetAllNonAbstractImplementingInterface<TInterface>(Assembly? assembly = null) => GetAllNonAbstractImplementingInterface(typeof(TInterface), assembly ?? Assembly.GetCallingAssembly());
 
-        public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface) => GetAllNonAbstractImplementingInterface(@interface, Assembly.GetCallingAssembly());
+        public static IReadOnlyCollection<Type> GetAllNonAbstractImplementingInterface(Type @interface) => GetAllNonAbstractImplementingInterface(@interface, Assembly.GetCallingAssembly());
 
-        public static List<Type> GetAllNonAbstractImplementingInterface<TInterface, TAssemblyClass>() 
+        public static IReadOnlyCollection<Type> GetAllNonAbstractImplementingInterface<TInterface, TAssemblyClass>() 
             where TInterface : class
             where TAssemblyClass : class => GetAllNonAbstractImplementingInterface(typeof(TInterface), typeof(TAssemblyClass).Assembly);
 
-        public static List<Type> GetAllNonAbstractImplementingInterface(Type @interface, Assembly assembly)
+        public static IReadOnlyCollection<Type> GetAllNonAbstractImplementingInterface(Type @interface, Assembly assembly)
         {
             if (@interface == null)
                 throw new ArgumentNullException($"Parameter [{nameof(@interface)}] cannot be null");
@@ -53,8 +55,34 @@ namespace Krzaq.Tools.Reflection
 
             return assembly
                 .GetTypes()
-                .Where(t => t.IsClass && !t.IsAbstract && @interface.IsAssignableFrom(t))
-                .ToList();
+                .Where(t => t.IsClass
+                         && !t.IsAbstract
+                         && @interface.IsAssignableFrom(t))
+                .ToList().AsReadOnly();
+        }
+
+        public static IReadOnlyCollection<Type> GetAllNonAbstractFromNamespace(string @namespace, string? suffixFilter = null, Assembly? assembly = null)
+        {
+            return (assembly ?? Assembly.GetCallingAssembly())
+                .GetTypes()
+                .Where(t => t.IsClass
+                         && !t.IsAbstract
+                         && t.Namespace.StartsWith(@namespace)
+                         && t.Name.EndsWith(suffixFilter ?? string.Empty))
+                .ToList()
+                .AsReadOnly();
+        }
+
+        public static IReadOnlyCollection<Type> GetAllNonAbstractFromNamespace(string @namespace, Regex classNameRegexSelector, Assembly? assembly = null)
+        {
+            return (assembly ?? Assembly.GetCallingAssembly())
+                .GetTypes()
+                .Where(t => t.IsClass
+                         && !t.IsAbstract
+                         && t.Namespace.StartsWith(@namespace)
+                         && classNameRegexSelector.IsMatch(t.Name))
+                .ToList()
+                .AsReadOnly();
         }
 
         public static object CallPropertyMethod(object obj, string propertyName, string methodName)

@@ -1,6 +1,13 @@
 ﻿# Krzaq.Tools.Reflection
 Library contains few reflection functions
 
+## v1.1.0
+Modified:
+* Changed all return types from `List<>` to `IReadOnlyCollection<>`
+Added:
+* `IReadOnlyCollection<Type> GetAllNonAbstractFromNamespace(string @namespace, string suffixFilter)`
+* `IReadOnlyCollection<Type> GetAllNonAbstractFromNamespace(string @namespace, Regex classNameRegexSelector)`
+
 ## v1.0.0
 Added:
 * `List<Type> GetAllNonAbstractSubclasses(Type baseClassType)`
