@@ -5,7 +5,7 @@ namespace Krzaq.Extensions.Expression
 {
     public static class ExpressionExtension
     {
-        public static string GetMemberName<T>(this LambdaExpression expression) => expression.Body switch
+        public static string GetMemberName(this LambdaExpression expression) => expression.Body switch
         {
             MemberExpression memberExpression => memberExpression.Member.Name,
             UnaryExpression unaryExpression when unaryExpression.Operand is MemberExpression memberOperand => memberOperand.Member.Name,
