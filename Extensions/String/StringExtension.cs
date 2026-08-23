@@ -13,14 +13,14 @@
             return that[..maxLength];
         }
 
-        public static string TrimStart(this string that, string text, bool ignoreCase = false)
+        public static string TrimPrefix(this string that, string text, bool ignoreCase = false)
         {
             if (that.StartsWith(text) || ignoreCase && that.ToLower().StartsWith(text.ToLower()))
                 return that[text.Length..];
             return that;
         }
 
-        public static string TrimEnd(this string that, string text, bool ignoreCase = false)
+        public static string TrimSuffix(this string that, string text, bool ignoreCase = false)
         {
             if (that.EndsWith(text) || ignoreCase && that.ToLower().EndsWith(text.ToLower()))
                 return that[..^text.Length];

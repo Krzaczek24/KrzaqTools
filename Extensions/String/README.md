@@ -1,6 +1,11 @@
 ﻿# Krzaq.Extensions.String
 Extension allows to change notation from any to choosen one
 
+## v1.1.0
+Modified:
+* Renamed `TrimStart` to `TrimPrefix`
+* Renamed `TrimEnd` to `TrimSuffix`
+
 ## v1.0.0
 Added:
 * `string ToCamelCase(this string input)`
