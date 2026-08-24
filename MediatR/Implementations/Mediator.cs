@@ -13,10 +13,10 @@ namespace Krzaq.MediatR.Implementations
         public ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request);
     }
 
-    public class Mediator(IServiceProvider serviceProvider) : IMediator
+    public sealed class Mediator(IServiceProvider serviceProvider) : IMediator
     {
-        public const string VALIDATOR_PREFIX = "VALIDATOR";
-        public const string HANDLER_PREFIX = "HANDLER";
+        internal const string VALIDATOR_PREFIX = "VALIDATOR";
+        internal const string HANDLER_PREFIX = "HANDLER";
 
         public async ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request)
         {
@@ -29,6 +29,11 @@ namespace Krzaq.MediatR.Implementations
                 var result = validator.Validate(request);
                 if (!result.IsValid)
                 {
+                    var errorsHandler = serviceProvider.GetService<IRequestErrorsHandler>();
+                    if (errorsHandler is not null)
+                    {
+                        throw await errorsHandler.Handle(result.Errors);
+                    }
                     throw HandleInvalidValidation(result.Errors);
                 }
             }
@@ -38,11 +43,11 @@ namespace Krzaq.MediatR.Implementations
             return (TResponse)await handler.Handle(request);
         }
 
-        protected virtual Exception HandleInvalidValidation(List<ValidationFailure> errors)
+        private static InvalidOperationException HandleInvalidValidation(IReadOnlyCollection<ValidationFailure> errors)
         {
             string stringifiedErrors = string.Join("\n", errors.Select(Convert));
             return new InvalidOperationException($"Validation failures:\n{stringifiedErrors}");
-            static string Convert(ValidationFailure failure) => $"";
+            static string Convert(ValidationFailure failure) => $"{failure.PropertyName}: {failure.ErrorMessage}";
         }
     }
 }

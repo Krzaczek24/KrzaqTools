@@ -1,6 +1,12 @@
 ﻿# Krzaq.MediatR
 Library including simple implementation of MediatR
 
+## v1.1.3
+Added `IRequestErrorsHandler` interface, if registered then it will be used to handle errors from MediatR requests, otherwise default behavior will be used (throwing exception).
+
+## v1.1.2
+Minor fixes
+
 ## v1.1.1
 Added assembly argument to all IServiceCollection extension methods, so that you can specify which assembly to scan for MediatR handlers.
 Default is `Assembly.GetCallingAssembly()`.

@@ -106,7 +106,7 @@ namespace Krzaq.Tests.Extensions
             // --- Arrange ---
 
             // --- Act ---
-            string actualResult = input.TrimStart(text, ignoreCase);
+            string actualResult = input.TrimPrefix(text, ignoreCase);
 
             // --- Assert ---
             Assert.That(actualResult, Is.EqualTo(expectedResult));
@@ -122,7 +122,7 @@ namespace Krzaq.Tests.Extensions
             // --- Arrange ---
 
             // --- Act ---
-            string actualResult = input.TrimEnd(text, ignoreCase);
+            string actualResult = input.TrimSuffix(text, ignoreCase);
 
             // --- Assert ---
             Assert.That(actualResult, Is.EqualTo(expectedResult));
