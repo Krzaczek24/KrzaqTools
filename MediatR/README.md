@@ -1,6 +1,10 @@
 ﻿# Krzaq.MediatR
 Library including simple implementation of MediatR
 
+## v1.2.0
+Added `IRequestHandler<in TRequest>` interface, so that you can implement handlers for requests without response.
+Changed call `Validate()` to `ValidateAsync()` in `RequestValidationBehavior` class, so that you can implement async validation.
+
 ## v1.1.3
 Added `IRequestErrorsHandler` interface, if registered then it will be used to handle errors from MediatR requests, otherwise default behavior will be used (throwing exception).
 

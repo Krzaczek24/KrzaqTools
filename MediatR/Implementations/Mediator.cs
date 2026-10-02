@@ -11,6 +11,7 @@ namespace Krzaq.MediatR.Implementations
     public interface IMediator
     {
         public ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request);
+        public ValueTask Send(IRequest request);
     }
 
     public sealed class Mediator(IServiceProvider serviceProvider) : IMediator
@@ -18,7 +19,7 @@ namespace Krzaq.MediatR.Implementations
         internal const string VALIDATOR_PREFIX = "VALIDATOR";
         internal const string HANDLER_PREFIX = "HANDLER";
 
-        public async ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request)
+        private async ValueTask<object> InternalSend(IRequest request)
         {
             string requestName = request.GetType().FullName!;
 
@@ -26,7 +27,7 @@ namespace Krzaq.MediatR.Implementations
             if (validatorInterface is not null)
             {
                 var validator = (IRequestValidator)serviceProvider.GetRequiredService(validatorInterface);
-                var result = validator.Validate(request);
+                var result = await validator.ValidateAsync(request);
                 if (!result.IsValid)
                 {
                     var errorsHandler = serviceProvider.GetService<IRequestErrorsHandler>();
@@ -40,8 +41,12 @@ namespace Krzaq.MediatR.Implementations
 
             var handlerInterface = serviceProvider.GetRequiredKeyedService<Type>($"{HANDLER_PREFIX}_{requestName}");
             var handler = (IRequestHandler)serviceProvider.GetRequiredService(handlerInterface);
-            return (TResponse)await handler.Handle(request);
+            return await handler.Handle(request);
         }
+
+        public async ValueTask<TResponse> Send<TResponse>(IRequest<TResponse> request) => (TResponse)await InternalSend(request);
+
+        public async ValueTask Send(IRequest request) => await InternalSend(request);
 
         private static InvalidOperationException HandleInvalidValidation(IReadOnlyCollection<ValidationFailure> errors)
         {

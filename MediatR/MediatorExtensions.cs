@@ -24,6 +24,7 @@ namespace Krzaq.MediatR
             foreach (Type handler in ReflectionToolbox.GetAllNonAbstractImplementingInterface<IRequestHandler>(assembly ?? Assembly.GetCallingAssembly()))
             {
                 var handlerInterface = handler.GetInterface(typeof(IRequestHandler<,>).Name)
+                    ?? handler.GetInterface(typeof(IRequestHandler<>).Name)
                     ?? throw new NullReferenceException($"No {nameof(IRequestHandler)} interface was found for {handler.Name} type");
 
                 string requestName = handlerInterface.GenericTypeArguments[0].FullName!;

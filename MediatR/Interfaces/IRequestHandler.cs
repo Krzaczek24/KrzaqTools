@@ -11,6 +11,21 @@ namespace Krzaq.MediatR.Interfaces
         where TRequest : IRequest<TResponse>
     {
         ValueTask<TResponse> Handle(TRequest request);
-        async ValueTask<object> IRequestHandler.Handle(object request) => (await Handle((TRequest)request))!;
+        async ValueTask<object> IRequestHandler.Handle(object request)
+        {
+            var response = await Handle((TRequest)request);
+            return response!;
+        }
+    }
+
+    public interface IRequestHandler<in TRequest> : IRequestHandler
+        where TRequest : IRequest
+    {
+        ValueTask Handle(TRequest request);
+        async ValueTask<object> IRequestHandler.Handle(object request)
+        {
+            await Handle((TRequest)request);
+            return null!;
+        }
     }
 }
