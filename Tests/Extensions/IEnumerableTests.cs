@@ -209,5 +209,37 @@ namespace Krzaq.Tests.Extensions
                 Assert.That(rest2.First(), Is.EqualTo(new Foo(2)));
             });
         }
+
+        [Test]
+        public void SlidingWindowTest_Elements5_Window_Size2_Step1()
+            => AssertSlidingWindow([1, 2, 3, 4, 5], 2, 1, [[1, 2], [2, 3], [3, 4], [4, 5]]);
+
+        [Test]
+        public void SlidingWindowTest_Elements5_Window_Size3_Step1()
+            => AssertSlidingWindow([1, 2, 3, 4, 5], 3, 1, [[1, 2, 3], [2, 3, 4], [3, 4, 5]]);
+
+        [Test]
+        public void SlidingWindowTest_Elements5_Window_Size3_Step2()
+            => AssertSlidingWindow([1, 2, 3, 4, 5], 3, 2, [[1, 2, 3], [3, 4, 5]]);
+
+        [Test]
+        public void SlidingWindowTest_Elements6_Window_Size3_Step2()
+            => AssertSlidingWindow([1, 2, 3, 4, 5, 6], 3, 2, [[1, 2, 3], [3, 4, 5]]);
+
+        private static void AssertSlidingWindow(int[] array, int size, int step, int[][] expected)
+        {
+            // --- Act ---
+            var windows = array.SlidingWindow(size, step).ToList();
+
+            // --- Assert ---
+            Assert.Multiple(() =>
+            {
+                Assert.That(windows, Has.Count.EqualTo(expected.Length));
+                for (int i = 0; i < expected.Length; i++)
+                {
+                    Assert.That(windows[i], Is.EqualTo(expected[i]));
+                }
+            });
+        }
     }
 }

@@ -1,6 +1,10 @@
 ﻿# Krzaq.Extensions.IEnumerable
 Extension adds few method to `IEnumerable` collections.
 
+## v1.13.0
+Added:
+* `IEnumerable<IReadOnlyList<T>> SlidingWindow<T>(this IEnumerable<T> first, int size, int step = 1)`
+
 ## v1.12.0
 Added:
 * `T? FirstOrNull<T>(this IEnumerable<T> first)`

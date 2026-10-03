@@ -87,5 +87,29 @@ namespace Krzaq.Extensions.IEnumerable
             first = that.FirstOrDefault();
             rest = that.Skip(1);
         }
+
+        public static IEnumerable<IReadOnlyList<T>> SlidingWindow<T>(this IEnumerable<T> first, int size, int step = 1)
+        {
+            if (first == null) throw new ArgumentNullException(nameof(first));
+            if (size <= 0) throw new ArgumentOutOfRangeException(nameof(size), "Windows size must be greater than 0");
+            if (step <= 0) throw new ArgumentOutOfRangeException(nameof(step), "Step must be greater than 0");
+
+            var window = new Queue<T>(size);
+
+            foreach (var item in first)
+            {
+                window.Enqueue(item);
+
+                if (window.Count == size)
+                {
+                    yield return window.ToArray();
+
+                    for (int i = 0; i < step && window.Count > 0; i++)
+                    {
+                        window.Dequeue();
+                    }
+                }
+            }
+        }
     }
 }
